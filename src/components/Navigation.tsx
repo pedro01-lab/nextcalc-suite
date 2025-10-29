@@ -14,11 +14,11 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="bg-card border-b border-border sticky top-0 z-50 shadow-sm">
+    <nav className="bg-card/80 backdrop-blur-xl border-b border-border/50 sticky top-0 z-50 card-shadow">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-2 text-lg md:text-2xl font-bold text-primary hover:opacity-80 transition-opacity whitespace-nowrap">
-            <Calculator className="h-6 w-6 md:h-7 md:w-7" />
+          <Link to="/" className="flex items-center gap-2 text-lg md:text-2xl font-display font-bold text-gradient hover:scale-105 transition-smooth whitespace-nowrap">
+            <Calculator className="h-6 w-6 md:h-7 md:w-7 animate-float" />
             One Calculator Space
           </Link>
 
@@ -28,10 +28,11 @@ const Navigation = () => {
               <Link
                 key={link.to}
                 to={link.to}
-                className="flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors"
+                className="flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-smooth relative group"
               >
-                <link.icon className="h-4 w-4" />
+                <link.icon className="h-4 w-4 group-hover:scale-110 transition-smooth" />
                 {link.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary group-hover:w-full transition-smooth"></span>
               </Link>
             ))}
           </div>
@@ -39,7 +40,7 @@ const Navigation = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-foreground hover:text-primary transition-colors"
+            className="md:hidden p-2 text-foreground hover:text-primary transition-smooth hover:scale-110"
             aria-label="Toggle menu"
           >
             <svg
@@ -62,13 +63,13 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border">
+          <div className="md:hidden py-4 border-t border-border/50 animate-fade-in backdrop-blur-xl bg-card/90">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
                 onClick={() => setIsMenuOpen(false)}
-                className="flex items-center gap-3 px-4 py-3 text-foreground hover:bg-secondary hover:text-primary transition-colors rounded-lg"
+                className="flex items-center gap-3 px-4 py-3 text-foreground hover:bg-primary/10 hover:text-primary transition-smooth rounded-lg mx-2"
               >
                 <link.icon className="h-5 w-5" />
                 {link.label}

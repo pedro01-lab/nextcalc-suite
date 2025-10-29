@@ -15,20 +15,22 @@ const CalculatorLayout = ({ children, title, description }: CalculatorLayoutProp
     <div className="min-h-screen flex flex-col bg-background">
       <Navigation />
       
-      <main className="flex-1">
+      <main className="flex-1 animate-fade-in">
         <div className="container mx-auto px-4 py-8 max-w-5xl">
           <AdSpace position="top" />
           
           <div className="text-center mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold mb-3 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-6xl font-display font-bold mb-4 text-gradient animate-fade-in-up">
               {title}
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
               {description}
             </p>
           </div>
 
-          {children}
+          <div className="animate-scale-in" style={{ animationDelay: '0.2s' }}>
+            {children}
+          </div>
 
           <Newsletter />
           
