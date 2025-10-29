@@ -17,8 +17,8 @@ const Navigation = () => {
     <nav className="bg-card border-b border-border sticky top-0 z-50 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-2 text-2xl font-bold text-primary hover:opacity-80 transition-opacity">
-            <Calculator className="h-7 w-7" />
+          <Link to="/" className="flex items-center gap-2 text-lg md:text-2xl font-bold text-primary hover:opacity-80 transition-opacity whitespace-nowrap">
+            <Calculator className="h-6 w-6 md:h-7 md:w-7" />
             One Calculator Space
           </Link>
 
