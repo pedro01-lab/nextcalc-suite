@@ -19,7 +19,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2 text-2xl font-bold text-primary hover:opacity-80 transition-opacity">
             <Calculator className="h-7 w-7" />
-            NextCalc
+            One Calculator Space
           </Link>
 
           {/* Desktop Navigation */}
