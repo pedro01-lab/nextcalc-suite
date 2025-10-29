@@ -1,73 +1,162 @@
-# Welcome to your Lovable project
+# NextCalc - Free Online Calculators
 
-## Project info
+A modern, fast, and mobile-friendly calculator website built with React, TypeScript, and Tailwind CSS.
 
-**URL**: https://lovable.dev/projects/c569b421-451d-411f-a6c4-fb5c4de464f2
+## 🚀 Features
 
-## How can I edit this code?
+- **Basic Calculator** - Standard math operations with history and copy functionality
+- **Loan Calculator** - Calculate monthly payments, interest, and total costs
+- **BMI Calculator** - Calculate Body Mass Index with health categories
+- **Currency Converter** - Live exchange rates for 20+ currencies
+- **Crypto Profit Calculator** - Calculate trading profits, losses, and ROI
 
-There are several ways of editing your application.
+## 📱 Key Highlights
 
-**Use Lovable**
+- ✨ Clean, modern design with cyan blue accent (#00bcd4)
+- 📱 Fully responsive - works perfectly on mobile and desktop
+- ⚡ Lightning-fast performance
+- 🎯 SEO optimized with proper meta tags
+- 💾 Local calculations - your data stays private
+- 📰 Newsletter signup integration
+- 📊 Ad spaces ready for monetization
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/c569b421-451d-411f-a6c4-fb5c4de464f2) and start prompting.
+## 🛠️ Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- **React 18** - Modern UI framework
+- **TypeScript** - Type-safe code
+- **Vite** - Fast build tool
+- **Tailwind CSS** - Utility-first styling
+- **Shadcn/UI** - Beautiful component library
+- **React Router** - Client-side routing
+- **Exchange Rate API** - Live currency data
 
-**Use your preferred IDE**
+## 📦 Installation
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+```bash
+# Clone the repository
+git clone <your-repo-url>
+cd nextcalc
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+# Install dependencies
+npm install
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The site will be available at `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🚀 Deployment
 
-**Use GitHub Codespaces**
+### Deploy to Netlify
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+1. Push your code to GitHub
+2. Go to [Netlify](https://netlify.com)
+3. Click "Add new site" → "Import an existing project"
+4. Connect your GitHub repository
+5. Build settings:
+   - Build command: `npm run build`
+   - Publish directory: `dist`
+6. Click "Deploy site"
 
-## What technologies are used for this project?
+### Deploy to Vercel
 
-This project is built with:
+1. Push your code to GitHub
+2. Go to [Vercel](https://vercel.com)
+3. Click "Import Project"
+4. Select your GitHub repository
+5. Vercel will auto-detect Vite settings
+6. Click "Deploy"
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🔧 Configuration
 
-## How can I deploy this project?
+### Adding New Calculators
 
-Simply open [Lovable](https://lovable.dev/projects/c569b421-451d-411f-a6c4-fb5c4de464f2) and click on Share -> Publish.
+1. Create a new page component in `src/pages/YourCalculator.tsx`
+2. Use the `CalculatorLayout` wrapper for consistent design
+3. Add your calculator logic and UI
+4. Add the route in `src/App.tsx`:
+   ```tsx
+   <Route path="/your-calculator" element={<YourCalculator />} />
+   ```
+5. Add navigation link in `src/components/Navigation.tsx`
 
-## Can I connect a custom domain to my Lovable project?
+### Customizing Colors
 
-Yes, you can!
+Edit `src/index.css` to change the design system:
+```css
+--primary: 187 100% 42%; /* Main accent color */
+--background: 0 0% 98%;   /* Background color */
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Adding Google AdSense
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Replace the `AdSpace` component placeholders in `src/components/AdSpace.tsx` with your actual AdSense code.
+
+### Newsletter Integration
+
+Connect the newsletter form in `src/components/Newsletter.tsx` to your email service (Mailchimp, ConvertKit, etc.)
+
+## 📄 Project Structure
+
+```
+src/
+├── components/         # Reusable components
+│   ├── Navigation.tsx
+│   ├── Footer.tsx
+│   ├── Newsletter.tsx
+│   ├── AdSpace.tsx
+│   └── CalculatorLayout.tsx
+├── pages/             # Calculator pages
+│   ├── BasicCalculator.tsx
+│   ├── LoanCalculator.tsx
+│   ├── BMICalculator.tsx
+│   ├── CurrencyConverter.tsx
+│   ├── CryptoCalculator.tsx
+│   ├── Terms.tsx
+│   ├── Privacy.tsx
+│   └── Contact.tsx
+├── App.tsx            # Main app with routing
+└── index.css          # Design system
+```
+
+## 🎨 Design System
+
+The site uses a semantic design system defined in `src/index.css`:
+- Primary color: Cyan blue (#00bcd4)
+- Clean typography with good hierarchy
+- Smooth transitions and animations
+- Card-based layouts
+- Mobile-first responsive design
+
+## 📝 SEO Best Practices
+
+- Meta titles and descriptions on every page
+- Semantic HTML structure
+- Fast loading times
+- Mobile-optimized
+- Descriptive URLs
+- Alt text for images (when added)
+
+## 🔒 Privacy & Data
+
+All calculator inputs are processed locally in the browser. No data is sent to servers except:
+- Currency converter API calls (for exchange rates)
+- Newsletter signups (when implemented)
+- Contact form submissions (when implemented)
+
+## 🤝 Contributing
+
+Feel free to open issues or submit pull requests for improvements.
+
+## 📄 License
+
+This project is open source and available under the MIT License.
+
+## 🆘 Support
+
+For questions or issues, visit the Contact page or open a GitHub issue.
+
+---
+
+Built with ❤️ using React and Tailwind CSS
